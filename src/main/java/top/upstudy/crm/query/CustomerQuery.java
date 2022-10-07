@@ -18,5 +18,6 @@ public class CustomerQuery extends BaseQuery {
     // 金额区间  1:0-1000   2:1000-3000  3:3000-5000 4:5000+
     private Integer type;
 
+    private Integer customerType;
 
 }

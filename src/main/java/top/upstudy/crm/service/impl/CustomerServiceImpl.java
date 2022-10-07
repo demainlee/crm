@@ -68,7 +68,7 @@ public class CustomerServiceImpl extends ServiceImpl<CustomerMapper, Customer> i
          *     phone 联系电话  非空 格式合法
          *     法人  legal_person 非空
          */
-        AssertUtil.isTrue(StringUtils.isBlank(customer.getLevel()),"请指定客户级别!");
+        AssertUtil.isTrue(StringUtils.isBlank(customer.getLevel()),"请指定客户角色!");
         checkParams(customer.getName(),customer.getPhone(),customer.getLegalPerson());
         AssertUtil.isTrue(null != customerMapper.selectOne(new QueryWrapper<Customer>().eq("name",customer.getName())),"该客户已存在!");
 
@@ -102,7 +102,7 @@ public class CustomerServiceImpl extends ServiceImpl<CustomerMapper, Customer> i
     private void checkParams(String name, String phone, String legalPerson) {
         AssertUtil.isTrue(StringUtils.isBlank(name),"请指定客户名称!");
         AssertUtil.isTrue(!(PhoneUtil.isMobile(phone)),"手机号格式非法!");
-        AssertUtil.isTrue(StringUtils.isBlank(legalPerson),"请指定公司法人!");
+//        AssertUtil.isTrue(StringUtils.isBlank(legalPerson),"请指定公司法人!");
     }
 
 

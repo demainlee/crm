@@ -47,14 +47,6 @@
 				<i class="layui-icon">&#xe608;</i>
 				联系人管理
 			</a>
-<#--			<a class="layui-btn layui-btn-normal addNews_btn" lay-event="recode">-->
-<#--				<i class="layui-icon">&#xe608;</i>-->
-<#--				交往记录-->
-<#--			</a>-->
-<#--			<a class="layui-btn layui-btn-normal addNews_btn" lay-event="order">-->
-<#--				<i class="layui-icon">&#xe608;</i>-->
-<#--				订单查看-->
-<#--			</a>-->
 		</div>
 	</script>
 	<!--操作-->
@@ -65,7 +57,7 @@
 
 
 </form>
-<script type="text/javascript" src="${ctx}/js/customer/customer.js"></script>
+<script type="text/javascript" src="${ctx}/js/legalcustomer/legalcustomer.js"></script>
 
 </body>
 </html>

@@ -111,5 +111,13 @@ public class Customer implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     private Date updateDate;
 
+    @ApiModelProperty(value = "客户类型  0 自然人  1 法人")
+    private Integer customerType;
+
+    @ApiModelProperty(value = "证件号码")
+    private String cardNo;
+
+    @ApiModelProperty(value = "证件类型")
+    private String cardType;
 
 }

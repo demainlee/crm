@@ -16,15 +16,28 @@
             </div>
         </div>
         <div class="layui-col-xs6">
-            <label class="layui-form-label">法人</label>
+            <label class="layui-form-label">客户角色</label>
             <div class="layui-input-block">
-                <input type="text" class="layui-input"
-                       name="legalPerson" id="legalPerson" lay-verify="required" value="${(customer.legalPerson)!}" placeholder="请输入法人">
+                <select name="level"  id="level">
+                    <option value="" >请选择</option>
+                    <option value="供应商" <#if customer?? & customer.level=="供应商">selected="selected"</#if>>供应商</option>
+                    <option value="担保客户" <#if customer?? & customer.level=="担保客户">selected="selected"</#if>>担保客户</option>
+                    <option value="承租人" <#if customer?? & customer.level=="承租人">selected="selected"</#if>>承租人</option>
+                    <option value="合作伙伴" <#if customer?? & customer.level=="合作伙伴">selected="selected"</#if>>合作伙伴</option>
+                    <option value="保险公司" <#if customer?? & customer.level=="保险公司">selected="selected"</#if>>保险公司</option>
+                </select>
             </div>
         </div>
+<#--        <div class="layui-col-xs6">-->
+<#--            <label class="layui-form-label">法人</label>-->
+<#--            <div class="layui-input-block">-->
+<#--                <input type="text" class="layui-input"-->
+<#--                       name="legalPerson" id="legalPerson" lay-verify="required" value="${(customer.legalPerson)!}" placeholder="请输入法人">-->
+<#--            </div>-->
+<#--        </div>-->
     </div>
 
-    <input type="hidden" name="customerType" id="customerType" value="1">
+    <input type="hidden" name="customerType" id="customerType" value="0">
 
     <div class="layui-form-item layui-row">
         <div class="layui-col-xs6">
@@ -43,7 +56,6 @@
         </div>
     </div>
 
-
     <div class="layui-form-item layui-row">
         <div class="layui-col-xs6">
             <label class="layui-form-label">区域</label>
@@ -57,29 +69,6 @@
             <div class="layui-input-block">
                 <input type="text" class="layui-input"
                        name="cusManager" value="${(customer.cusManager)!}" placeholder="请输入客户经理">
-            </div>
-        </div>
-    </div>
-
-    <div class="layui-form-item layui-row">
-        <div class="layui-col-xs6">
-            <label class="layui-form-label">客户角色</label>
-            <div class="layui-input-block">
-                <select name="level"  id="level">
-                    <option value="" >请选择</option>
-                    <option value="供应商" <#if customer?? & customer.level=="供应商">selected="selected"</#if>>供应商</option>
-                    <option value="担保客户" <#if customer?? & customer.level=="担保客户">selected="selected"</#if>>担保客户</option>
-                    <option value="承租人" <#if customer?? & customer.level=="承租人">selected="selected"</#if>>承租人</option>
-                    <option value="合作伙伴" <#if customer?? & customer.level=="合作伙伴">selected="selected"</#if>>合作伙伴</option>
-                    <option value="保险公司" <#if customer?? & customer.level=="保险公司">selected="selected"</#if>>保险公司</option>
-                </select>
-            </div>
-        </div>
-        <div class="layui-col-xs6">
-            <label class="layui-form-label">信用度</label>
-            <div class="layui-input-block">
-                <input type="text" class="layui-input"
-                       name="reputation" value="${(customer.reputation)!}"  placeholder="请输入客户信用级别">
             </div>
         </div>
     </div>
@@ -156,23 +145,14 @@
     </div>
 
     <div class="layui-form-item layui-row">
-        <div class="layui-col-xs6">
-            <label class="layui-form-label">国税</label>
-            <div class="layui-input-block">
-                <input type="text" class="layui-input"
-                       name="nationalTaxNum" value="${(customer.nationalTaxNum)!}"  placeholder="请输入国税">
-            </div>
-        </div>
-        <div class="layui-col-xs6">
-            <label class="layui-form-label">地税</label>
-            <div class="layui-input-block">
-                <input type="text" class="layui-input"
-                       name="localTaxNum" value="${(customer.localTaxNum)!}"  placeholder="请输入地税">
-            </div>
-        </div>
-    </div>
 
-    <div class="layui-form-item layui-row">
+        <div class="layui-col-xs6">
+            <label class="layui-form-label">信用度</label>
+            <div class="layui-input-block">
+                <input type="text" class="layui-input"
+                       name="reputation" value="${(customer.reputation)!}"  placeholder="请输入客户信用级别">
+            </div>
+        </div>
 
         <div class="layui-col-xs6">
             <label class="layui-form-label">年营业额</label>
@@ -194,6 +174,6 @@
         </div>
     </div>
 </form>
-<script type="text/javascript" src="${ctx}/js/customer/add.update.js"></script>
+<script type="text/javascript" src="${ctx}/js/legalcustomer/legal_add.update.js"></script>
 </body>
 </html>

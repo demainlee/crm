@@ -7,7 +7,7 @@ layui.use(['table','layer',"form"],function(){
     //客户列表展示
     var  tableIns = table.render({
         elem: '#customerList',
-        url : ctx+'/customer/list',
+        url : ctx+'/legalCustomer/list',
         cellMinWidth : 95,
         page : true,
         height : "full-125",
@@ -19,26 +19,26 @@ layui.use(['table','layer',"form"],function(){
             {type: "checkbox", fixed:"center"},
             // {field: "id", title:'编号',fixed:"true"},
             {field: 'customerId', title: '客户编号', align:'center'},
-            {field: 'name', title: '客户名',align:"center"},
+            {field: 'name', title: '客户名称',align:"center"},
+            // {field: 'legalPerson', title: '法人',  align:'center'},
+            {field: 'area', title: '区域', align:'center'},
+            {field: 'cusManager', title: '客户经理',  align:'center'},
+            // {field: 'satisfaction', title: '满意度', align:'center'},
+            {field: 'level', title: '客户角色', align:'center'},
             {field: 'cardType', title: '证件类型', align:'center'},
             {field: 'cardNo', title: '证件号码', align:'center'},
-            {field: 'legalPerson', title: '法人',  align:'center'},
-            {field: 'area', title: '地区', align:'center'},
-            {field: 'cusManager', title: '客户经理',  align:'center'},
-            {field: 'satisfaction', title: '满意度', align:'center'},
-            {field: 'level', title: '客户角色', align:'center'},
             {field: 'reputation', title: '信用度', align:'center'},
             {field: 'address', title: '详细地址', align:'center'},
             {field: 'postCode', title: '邮编', align:'center'},
-            {field: 'phone', title: '电话', align:'center'},
-            {field: 'webSite', title: '网站', align:'center'},
-            {field: 'fax', title: '传真', align:'center'},
-            {field: 'registeredCapital', title: '注册资金', align:'center'},
-            {field: 'businessLicense', title: '营业执照', align:'center'},
+            {field: 'phone', title: '联系电话', align:'center'},
+            // {field: 'webSite', title: '网站', align:'center'},
+            // {field: 'fax', title: '传真', align:'center'},
+            // {field: 'registeredCapital', title: '注册资金', align:'center'},
+            // {field: 'businessLicense', title: '营业执照', align:'center'},
             {field: 'bank', title: '开户行', align:'center'},
             {field: 'accountNumber', title: '开户账号', align:'center'},
-            {field: 'nationalTaxNum', title: '国税', align:'center'},
-            {field: 'localTaxNum', title: '地税', align:'center'},
+            // {field: 'nationalTaxNum', title: '国税', align:'center'},
+            // {field: 'localTaxNum', title: '地税', align:'center'},
             {field: 'createDate', title: '创建时间', align:'center'},
             {field: 'updateDate', title: '更新时间', align:'center'},
             {title: '操作', templet:'#customerListBar',fixed:"right",align:"center", minWidth:150}
@@ -142,7 +142,7 @@ layui.use(['table','layer',"form"],function(){
 
     function openAddOrUpdateCustomerDialog(id) {
         var title="客户管理-客户添加";
-        var url=ctx+"/customer/addOrUpdateCustomerPage";
+        var url=ctx+"/legalCustomer/addOrUpdateCustomerPage";
         if(id){
             title="客户管理-客户更新";
             url=url+"?id="+id;

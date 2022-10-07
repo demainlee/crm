@@ -44,7 +44,7 @@ layui.use(['layer','echarts'], function () {
             option = {
                 title: {
                     text: '客户构成分析',
-                    subtext: '来自CRM',
+                    subtext: ' ',
                     left: 'center'
                 },
                 tooltip: {

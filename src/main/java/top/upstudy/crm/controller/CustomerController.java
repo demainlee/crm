@@ -2,6 +2,7 @@ package top.upstudy.crm.controller;
 
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.toolkit.ObjectUtils;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -56,6 +57,7 @@ public class CustomerController extends BaseController {
     @GetMapping("list")
     @ResponseBody
     public Map<String,Object> queryCustomersByParams(CustomerQuery customerQuery){
+        customerQuery.setCustomerType(1);
         return customerService.queryCustomersByParams(customerQuery);
     }
 
@@ -79,8 +81,10 @@ public class CustomerController extends BaseController {
     @ApiOperation("添加或更新界面")
     @GetMapping("addOrUpdateCustomerPage")
     public String addOrUpdateCustomerPage(Integer id, Model model){
-        model.addAttribute("customer",customerService.getById(id));
-        //System.out.println(customerService.getById(id));
+        if(ObjectUtils.isNotNull(id)){
+            Customer customer = customerService.getById(id);
+            model.addAttribute("customer",customer);
+        }
         return "customer/add_update";
     }
 

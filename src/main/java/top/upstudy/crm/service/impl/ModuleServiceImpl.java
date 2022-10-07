@@ -1,5 +1,7 @@
 package top.upstudy.crm.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.Wrapper;
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import org.apache.commons.lang3.StringUtils;
 import top.upstudy.crm.mapper.PermissionMapper;
@@ -63,7 +65,7 @@ public class ModuleServiceImpl extends ServiceImpl<ModuleMapper, Module> impleme
     public Map<String,Object> queryModules(){
         Map<String,Object> result = new HashMap<String,Object>();
         //查询所有菜单的所有数据
-        List<Module> modules = moduleMapper.selectList(null);
+        List<Module> modules = moduleMapper.selectList(new LambdaQueryWrapper<Module>().eq(Module::getIsValid,1));
         result.put("count",modules.size());
         result.put("data",modules);
         result.put("code",0);

@@ -19,14 +19,9 @@
                 <p>4.生成目录树插件 Z-tree  <a class="layui-btn layui-btn-xs layui-btn-danger" target="_blank" href="http://www.treejs.cn/v3/faq.php#_206">Z-tree文档</a></p>
                 <p>5.数据连接池 Druid  <a class="layui-btn layui-btn-xs layui-btn-danger" target="_blank" href="https://github.com/alibaba/druid/">Druid文档</a></p>
                 <p>6.接口测试工具 swagger2  <a class="layui-btn layui-btn-xs layui-btn-danger" target="_blank" href="https://swagger.io/">swagger文档</a></p>
-                <p>7.图标展示工具 echars  <a class="layui-btn layui-btn-xs layui-btn-danger" target="_blank" href="https://swagger.io/">echars文档</a></p>
+                <p>7.图标展示工具 echarts  <a class="layui-btn layui-btn-xs layui-btn-danger" target="_blank" href="https://echarts.apache.org/zh/index.html">echarts文档</a></p>
                 <p>8.分页工具 PageHelper</p>
                 <p>9.插件（注解生成get set方法）Lombok</p>
-
-               
-                <p>github    <a class="layui-btn layui-btn-xs layui-btn-normal" target="_blank" href="https://github.com/ChangeWeDer/crm">github地址</a></p>
-                
-                <p>gitee     <a class="layui-btn layui-btn-xs layui-btn-normal" target="_blank" href="https://gitee.com/changeWeder/crm">gitee地址</a></p>
             </blockquote>
         </div>
     </div>
